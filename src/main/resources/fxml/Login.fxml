@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controladores.LoginController"
+      style="-fx-background: linear-gradient(to bottom, #1a5f7a, #0d3b4a);">
+    
+    <VBox alignment="CENTER" spacing="15" 
+          style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 5);"
+          maxWidth="400" maxHeight="500" 
+          VBox.vgrow="NEVER">
+        
+        <padding>
+            <Insets top="40" right="30" bottom="40" left="30"/>
+        </padding>
+        
+        <VBox alignment="CENTER" spacing="5">
+            <Label text="FUMIGIL" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #1a5f7a;">
+                <font>
+                    <Font name="Arial" size="28"/>
+                </font>
+            </Label>
+            <Label text="CRM - Sistema de Gestion de Servicios" 
+                   style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+        </VBox>
+        
+        <Separator/>
+        
+        <VBox spacing="15">
+            <TextField fx:id="txtUsername" promptText="Correo electronico" 
+                       style="-fx-font-size: 14px; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: #ccc;"
+                       maxWidth="300"/>
+            
+            <PasswordField fx:id="txtPassword" promptText="Contrasena"
+                          style="-fx-font-size: 14px; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: #ccc;"
+                          maxWidth="300"/>
+        </VBox>
+        
+        <Button fx:id="btnLogin" text="INICIAR SESION" onAction="#handleLogin"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"
+                maxWidth="300" defaultButton="true"/>
+        
+        <ProgressIndicator fx:id="progressIndicator" visible="false" 
+                          style="-fx-progress-color: #27ae60;" maxWidth="30" maxHeight="30"/>
+        
+        <Label fx:id="lblError" text="" style="-fx-text-fill: #e74c3c; -fx-font-size: 12px;" wrapText="true"/>
+        
+        <Button text="SALIR" onAction="#handleSalir"
+                style="-fx-background-color: transparent; -fx-text-fill: #999; -fx-font-size: 12px;"/>
+        
+    </VBox>
+</VBox>
